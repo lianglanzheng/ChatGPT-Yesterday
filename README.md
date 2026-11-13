@@ -18,14 +18,14 @@ The tool only downloads files. It doesn't install anything or modify your system
 
 ## Usage
 
-Install the [.NET 10 SDK](https://dotnet.microsoft.com/download), make sure you're online, and run the following from the project directory:
+Install the [.NET 10 SDK](https://dotnet.microsoft.com/download) version 10.0.300 or later, make sure you're online, and run the following from the project directory in an interactive terminal:
 
 ```sh
-dotnet run --file ChatGptVersions.cs | dotnet run --file ChatGptDownload.cs
+dotnet run --file ChatGptYesterday.cs
 ```
 
 Follow the prompts to choose a version. The downloaded file will be saved to the current directory; installing it is up to you.
 
-The codebase is just three files: `ChatGptVersions.cs` fetches the version catalog, `ChatGptDownload.cs` handles selection and downloading, and `response.schema.json` defines the JSON format passed between them.
+`ChatGptYesterday.cs` is the entry point. It includes `ChatGptVersions.cs` to fetch the version catalog and `ChatGptDownload.cs` to handle selection and downloading. `response.schema.json` defines the JSON format passed between them.
 
 Windows MSIX filenames don't include a version number. If you want to keep multiple versions, rename the files or put them in separate folders after downloading.
