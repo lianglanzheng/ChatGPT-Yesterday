@@ -18,6 +18,12 @@ The tool only downloads files. It doesn't install anything or modify your system
 
 ## Usage
 
+### Run a release build
+
+Download the latest release for your platform from the [GitHub Releases page](https://github.com/lianglanzheng/ChatGPT-Yesterday/releases), and run the included executable directly. No .NET SDK installation is required.
+
+### Run from source
+
 Install the [.NET 10 SDK](https://dotnet.microsoft.com/download) version 10.0.300 or later, make sure you're online, and run the following from the project directory in an interactive terminal:
 
 ```sh
