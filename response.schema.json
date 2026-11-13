@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatGPT installer URLs",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["installers", "error"],
+  "properties": {
+    "installers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["os", "arch", "version", "format", "url"],
+        "properties": {
+          "os": { "enum": ["windows", "macos", "linux"] },
+          "arch": { "type": "string", "pattern": "\\S" },
+          "version": { "type": "string", "pattern": "\\S" },
+          "format": { "type": "string", "pattern": "\\S" },
+          "url": { "type": "string", "format": "uri", "pattern": "^https://[^/?#\\s]+" }
+        }
+      }
+    },
+    "error": {
+      "enum": [null, "CANCELLED", "TIMEOUT", "NETWORK_ERROR", "INVALID_DATA", "INDEX_ERROR", "IO_ERROR", "INTERNAL_ERROR"]
+    }
+  },
+  "if": { "properties": { "error": { "type": "null" } } },
+  "then": { "properties": { "installers": { "minItems": 1 } } },
+  "else": { "properties": { "installers": { "maxItems": 0 } } }
+}
