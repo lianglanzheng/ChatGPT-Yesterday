@@ -1,5 +1,7 @@
 # ChatGPT Yesterday
 
+> When an update goes wrong, at least there's a way back.
+
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-555555)
 ![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen)](LICENSE)
@@ -9,6 +11,8 @@ ChatGPT ships updates faster than it fixes bugs. In practice, fixing one thing o
 Until a fix arrives, continuing to use the app usually means hunting down an older installer. This project doesn't fix bugs—it simply retrieves an older installer from the official source.
 
 ## Features
+
+Download an older ChatGPT Desktop version.
 
 Works on Windows, macOS, and Linux. It lists older official releases that are still available for download and lets you narrow them down by platform, architecture, version, and installer format.
 
